@@ -46,7 +46,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index">List Prestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addData">Add Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addEvent">Add Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addPembimbing">Add Pembimbing</a>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -20,6 +20,10 @@ Route::get('/index', function () {
     return view('User.Event.index');
 });
 
+Route::get('/addData', function () {
+    return view('User.Event.adddata');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
