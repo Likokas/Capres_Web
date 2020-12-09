@@ -5,7 +5,7 @@
             <tr>
                 <th>Nama Event</th>
                 <th>Keterangan Event</th>
-                <th>Nama Prestasi</th>
+                <th>Prestasi</th>
                 <th>Tanggal Pelaksanaan</th>
                 <th>Penyelenggara</th>
                 <th>Pembimbing</th>

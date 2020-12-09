@@ -16,7 +16,7 @@
                     <textarea class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Nama Prestasi</label>
+                    <label>Prestasi</label>
                     <input class="form-control" type="text">
                 </div>
                 <div class="form-group">

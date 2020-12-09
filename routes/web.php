@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 Route::get('/index', function () {
     return view('User.Event.index');
@@ -22,6 +22,10 @@ Route::get('/index', function () {
 
 Route::get('/addData', function () {
     return view('User.Event.adddata');
+});
+
+Route::get('/admin', function () {
+    return view('Admin.Event.index');
 });
 
 Auth::routes();

@@ -53,10 +53,14 @@
                         <a class="nav-link" href="/addData">Add Data</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/addEvent">Add Event</a>
+                        <a class="nav-link" href="/addEvent" data-toggle="modal"
+                           data-target="#addEvent">Add Event</a>
+                            @include('User.Event.addEvent')
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/addPembimbing">Add Pembimbing</a>
+                        <a class="nav-link" href="/addPembimbing" data-toggle="modal"
+                           data-target="#addPembimbing">Add Pembimbing</a>
+                        @include('User.Event.addPembimbing')
                     </li>
                 </ul>
 
