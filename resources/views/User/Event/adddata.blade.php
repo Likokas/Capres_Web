@@ -40,6 +40,10 @@
                     <select class="custom-select"> </select>
                 </div>
                 <div class="form-group">
+                    <label>Point </label>
+                    <input class="form-control"  type="text" disabled>
+                </div>
+                <div class="form-group">
                     <label>Penyelenggara</label>
                     <input class="form-control" type="text">
                 </div>

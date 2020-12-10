@@ -11,8 +11,11 @@
                 <th>Pembimbing</th>
                 <th>Jenis Event</th>
                 <th>Tingkatan</th>
+                <th>Point</th>
                 <th>Negara</th>
                 <th>Bukti</th>
+                <th>Status</th>
+
             </tr>
             </thead>
             <tbody>
@@ -25,6 +28,7 @@
                 <td>-</td>
                 <td>Tahunan</td>
                 <td>Nasional</td>
+                <td>100</td>
                 <td>Surabaya</td>
                 <td>Link Drive</td>
             </tr>
@@ -37,6 +41,7 @@
                 <td>-</td>
                 <td>Tahunan</td>
                 <td>Nasional</td>
+                <td>100</td>
                 <td>Surabaya</td>
                 <td>Link Drive</td>
             </tr>
