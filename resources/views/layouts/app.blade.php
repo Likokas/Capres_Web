@@ -33,9 +33,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <h3 class="nav-item text-decoration-none text-muted">CAPRES</h3>
-                    </ul>
+                    <a class="navbar-brand">
+                        CAPRES
+                    </a>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -76,9 +76,20 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background-color: #FCEBD7">
             @yield('content')
         </main>
+        <!-- Footer -->
+        <footer class="page-footer font-small"style="background-color: #F89423">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="https://www.uc.ac.id/en/"> www.uc.ac.id</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
     </div>
 </body>
 </html>
