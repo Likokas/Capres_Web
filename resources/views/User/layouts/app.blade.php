@@ -34,10 +34,14 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #F89423">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+{{--            <a class="navbar-brand" href="{{ url('/') }}">--}}
+{{--                {{ config('app.name', 'Laravel') }}--}}
+{{--            </a>--}}
+
+            <a class="navbar-brand">
+                CAPRES
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -103,9 +107,20 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main class="py-4" style="background-color: #FCEBD7">
         @yield('content')
     </main>
+    <!-- Footer -->
+    <footer class="page-footer font-small"style="background-color: #F89423">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://www.uc.ac.id/en/"> www.uc.ac.id</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
 </div>
 </body>
 {{--<script src="assets/js/jquery.min.js"></script>--}}
