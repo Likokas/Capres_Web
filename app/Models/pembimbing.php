@@ -14,7 +14,7 @@ class pembimbing extends Model
 
     ];
 
-    public function events(){
-        return $this->hasMany(Event::class, 'pembimbing_id', 'id');
-    }
+//    public function events(){
+//        return $this->hasMany(Event::class, 'pembimbing_id', 'id');
+//    }
 }

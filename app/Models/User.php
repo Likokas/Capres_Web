@@ -19,7 +19,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
+        'mahasiswa_id',
+        'dosen_id',
+        'role_id',
     ];
 
     /**
@@ -40,4 +44,36 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function mahasiswa(){
+        return $this->belongsTo(mahasiswa::class, 'mahasiswa_id', 'id');
+    }
+
+    public function dosen(){
+        return $this->belongsTo(dosen::class, 'dosen_id', 'id');
+    }
+
+    public function role(){
+        return $this->belongsTo(role::class, 'role_id', 'id');
+    }
+
+    public function attends_user(){
+        return $this->belongsToMany(Event::class)->withPivot('is_approved')->withTimestamps();
+    }
+
+    public function pembimbing_user(){
+        return $this->belongsToMany(Event::class)->withPivot('pembimbing_id')->withTimestamps();
+    }
+
+    public function point_user(){
+        return $this->belongsToMany(Event::class)->withPivot('point_id')->withTimestamps();
+    }
+
+    public function tanggal_user(){
+        return $this->belongsToMany(Event::class)->withPivot('tanggal_input')->withTimestamps();
+    }
+
+    public function pesan_user(){
+        return $this->belongsToMany(Event::class)->withPivot('pesan')->withTimestamps();
+    }
 }

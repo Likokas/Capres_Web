@@ -19,7 +19,7 @@ class AddForeignToEventsTable extends Migration
 //            $table->foreign('pembimbing_id')->references('id')->on('pembimbings');
 
             //tingkatan
-            $table->unsignedBigInteger('tingkatan_id')->index()->after('pembimbing_id');
+            $table->unsignedBigInteger('tingkatan_id')->index()->after('negara_id');
             $table->foreign('tingkatan_id')->references('id')->on('tingkatans');
 
             //jenis

@@ -34,4 +34,24 @@ class Event extends Model
         return $this->belongsTo(jenis::class, 'jenis_id', 'id');
     }
 
+    public function attends_event(){
+        return $this->belongsToMany(User::class)->withPivot('is_approved')->withTimestamps();
+    }
+
+    public function pembimbing_event(){
+        return $this->belongsToMany(User::class)->withPivot('pembimbing_id')->withTimestamps();
+    }
+
+    public function point_event(){
+        return $this->belongsToMany(User::class)->withPivot('point_id')->withTimestamps();
+    }
+
+    public function tanggal_event(){
+        return $this->belongsToMany(User::class)->withPivot('tanggal_input')->withTimestamps();
+    }
+
+    public function pesan_event(){
+        return $this->belongsToMany(User::class)->withPivot('pesan')->withTimestamps();
+    }
+
 }
