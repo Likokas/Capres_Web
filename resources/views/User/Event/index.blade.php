@@ -30,34 +30,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>NPLC</td>
-                            <td>Lomba Coding Surabaya</td>
-                            <td>Juara 1 Lomba Kategori 1</td>
-                            <td>08/12/2020</td>
-                            <td>Universitas Ciputra</td>
-                            <td>-</td>
-                            <td>Tahunan</td>
-                            <td>Nasional</td>
-                            <td>100</td>
-                            <td>Surabaya</td>
-                            <td>Link Drive</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>NPLC</td>
-                            <td>Lomba Coding Surabaya</td>
-                            <td>Juara 1 Lomba Kategori 1</td>
-                            <td>08/12/2020</td>
-                            <td>Universitas Ciputra</td>
-                            <td>-</td>
-                            <td>Tahunan</td>
-                            <td>Nasional</td>
-                            <td>100</td>
-                            <td>Surabaya</td>
-                            <td>Link Drive</td>
-                            <td></td>
-                        </tr>
+                            @foreach($events as $event)
+                                <tr>
+                                    <td>{{$event->namaEvent->nama_event}}</td>
+                                    <td>{{$event->keterangan_event}}</td>
+                                    <td>{{$event->prestasi}}</td>
+                                    <td>{{$event->tanggal_pelaksanaan}}</td>
+                                    <td>{{$event->penyelenggara}}</td>
+                                    <td>{{$event->pembimbing->pembimbing}}</td>
+                                    <td>{{$event->jenis->jenis}}</td>
+                                    <td>{{$event->tingkatan->tingkatan}}</td>
+                                    <td>{{$event->point->point}}</td>
+                                    <td>{{$event->negara->negara}}</td>
+                                    <td>{{$event->bukti}}</td>
+                                    <td>-</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
