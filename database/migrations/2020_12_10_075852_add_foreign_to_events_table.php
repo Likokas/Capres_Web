@@ -14,9 +14,9 @@ class AddForeignToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            //pembimbing
-            $table->unsignedBigInteger('pembimbing_id')->index()->after('negara_id');
-            $table->foreign('pembimbing_id')->references('id')->on('pembimbings');
+//            //pembimbing
+//            $table->unsignedBigInteger('pembimbing_id')->index()->after('negara_id');
+//            $table->foreign('pembimbing_id')->references('id')->on('pembimbings');
 
             //tingkatan
             $table->unsignedBigInteger('tingkatan_id')->index()->after('pembimbing_id');
@@ -26,10 +26,10 @@ class AddForeignToEventsTable extends Migration
             $table->unsignedBigInteger('jenis_id')->index()->after('tingkatan_id');
             $table->foreign('jenis_id')->references('id')->on('jenis');
 
-            //point
-
-            $table->unsignedBigInteger('point_id')->index()->after('jenis_id');
-            $table->foreign('point_id')->references('id')->on('points');
+//            //point
+//
+//            $table->unsignedBigInteger('point_id')->index()->after('jenis_id');
+//            $table->foreign('point_id')->references('id')->on('points');
         });
     }
 
