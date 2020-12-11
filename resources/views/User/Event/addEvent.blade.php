@@ -13,6 +13,14 @@
                     <label>Nama Event</label>
                     <input class="form-control" type="text">
                 </div>
+                <div class="form-group">
+                    <label>Keterangan Event</label>
+                    <textarea class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal Pelaksanaan</label>
+                    <input class="form-control" type="text">
+                </div>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">

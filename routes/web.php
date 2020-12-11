@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/index', function (){
+    return redirect()->route('event.index');
+});
+Route::resource('event', \App\Http\Controllers\EventController::class);
+
 //Route::get('/index', function () {
 //    return view('User.Event.index');
 //});
@@ -29,7 +34,7 @@ Route::get('/admin', function () {
     return view('Admin.Event.index');
 });
 
-Route::resource('event', \App\Http\Controllers\EventController::class);
+
 
 Auth::routes();
 

@@ -76,4 +76,8 @@ class User extends Authenticatable
     public function pesan_user(){
         return $this->belongsToMany(Event::class)->withPivot('pesan')->withTimestamps();
     }
+
+    public function prestasi_user(){
+        return $this->belongsToMany(User::class)->withPivot('prestasi')->withTimestamps();
+    }
 }
