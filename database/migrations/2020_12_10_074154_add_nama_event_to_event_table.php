@@ -14,10 +14,6 @@ class AddNamaEventToEventTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            //nama event
-            $table->unsignedBigInteger('nama_event_id')->index()->after('id');
-            $table->foreign('nama_event_id')->references('id')->on('nama_events');
-
             //negara
             $table->unsignedBigInteger('negara_id')->index()->after('tanggal_pelaksanaan');
             $table->foreign('negara_id')->references('id')->on('negaras');
