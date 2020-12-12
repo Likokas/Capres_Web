@@ -15,6 +15,9 @@ class JenisController extends Controller
     public function index()
     {
         //
+//        $jenisk = jenis::all();
+//        compact('jenisk');
+
     }
 
     /**
@@ -25,6 +28,7 @@ class JenisController extends Controller
     public function create()
     {
         //
+        return view('user.addUser');
     }
 
     /**

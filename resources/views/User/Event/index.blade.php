@@ -16,36 +16,30 @@
                         <thead>
                         <tr class="text-center">
                             <th>Nama Event</th>
-                            <th>Keterangan Event</th>
                             <th>Prestasi</th>
-                            <th>Tanggal Pelaksanaan</th>
-                            <th>Penyelenggara</th>
                             <th>Pembimbing</th>
-                            <th>Jenis Event</th>
-                            <th>Tingkatan</th>
-                            <th>Point</th>
-                            <th>Negara</th>
                             <th>Bukti</th>
+                            <th>Point</th>
                             <th>Status</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($events as $event)
-                                <tr>
-                                    <td>{{$event->namaEvent->nama_event}}</td>
-                                    <td>{{$event->keterangan_event}}</td>
-                                    <td>{{$event->prestasi}}</td>
-                                    <td>{{$event->tanggal_pelaksanaan}}</td>
-                                    <td>{{$event->penyelenggara}}</td>
-                                    <td>{{$event->pembimbing->pembimbing}}</td>
-                                    <td>{{$event->jenis->jenis}}</td>
-                                    <td>{{$event->tingkatan->tingkatan}}</td>
-                                    <td>{{$event->point->point}}</td>
-                                    <td>{{$event->negara->negara}}</td>
-                                    <td>{{$event->bukti}}</td>
-                                    <td>-</td>
-                                </tr>
-                            @endforeach
+{{--                            @foreach($events as $event)--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{$event->namaEvent->nama_event}}</td>--}}
+{{--                                    <td>{{$event->keterangan_event}}</td>--}}
+{{--                                    <td>{{$event->prestasi}}</td>--}}
+{{--                                    <td>{{$event->tanggal_pelaksanaan}}</td>--}}
+{{--                                    <td>{{$event->penyelenggara}}</td>--}}
+{{--                                    <td>{{$event->pembimbing->pembimbing}}</td>--}}
+{{--                                    <td>{{$event->jenis->jenis}}</td>--}}
+{{--                                    <td>{{$event->tingkatan->tingkatan}}</td>--}}
+{{--                                    <td>{{$event->point->point}}</td>--}}
+{{--                                    <td>{{$event->negara->negara}}</td>--}}
+{{--                                    <td>{{$event->bukti}}</td>--}}
+{{--                                    <td>-</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
                         </tbody>
                     </table>
                 </div>

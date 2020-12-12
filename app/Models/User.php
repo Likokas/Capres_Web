@@ -80,4 +80,8 @@ class User extends Authenticatable
     public function prestasi_user(){
         return $this->belongsToMany(User::class)->withPivot('prestasi')->withTimestamps();
     }
+
+    public function bukti_user(){
+        return $this->belongsToMany(User::class)->withPivot('bukti')->withTimestamps();
+    }
 }

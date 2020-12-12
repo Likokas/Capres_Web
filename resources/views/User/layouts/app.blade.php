@@ -57,10 +57,14 @@
                         <a class="nav-link" href="/addData">Add Data</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/addEvent" data-toggle="modal"
-                           data-target="#addEvent">Add Event</a>
-                            @include('User.Event.addEvent')
+                        <a class="nav-link" href="{{route('event.create')}}">Add Event</a>
                     </li>
+
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link" href="{{route('event.create')}}" data-toggle="modal"--}}
+{{--                           data-target="#addEvent">Add Event</a>--}}
+{{--                            @include('User.Event.addEvent')--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link" href="/addPembimbing" data-toggle="modal"
                            data-target="#addPembimbing">Add Pembimbing</a>
