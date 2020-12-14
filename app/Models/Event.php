@@ -54,4 +54,12 @@ class Event extends Model
         return $this->belongsToMany(User::class)->withPivot('pesan')->withTimestamps();
     }
 
+    public function prestasi_event(){
+        return $this->belongsToMany(User::class)->withPivot('prestasi')->withTimestamps();
+    }
+
+    public function bukti_event(){
+        return $this->belongsToMany(User::class)->withPivot('bukti')->withTimestamps();
+    }
+
 }

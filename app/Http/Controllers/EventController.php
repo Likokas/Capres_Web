@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\jenis;
+use App\Models\negara;
+use App\Models\tingkatan;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -26,7 +29,10 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $jenisk = jenis::all();
+        $tingkatans = tingkatan::all();
+        $negaras = negara::all();
+        return view('user.event.addEvent', compact('jenisk', 'tingkatans', 'negaras'));
     }
 
     /**
@@ -38,6 +44,11 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+        Event::create($request->all());
+        $jenisk = jenis::all();
+        $tingkatans = tingkatan::all();
+        $negaras = negara::all();
+        return view('user.event.addEvent', compact('jenisk', 'tingkatans', 'negaras'));
     }
 
     /**
