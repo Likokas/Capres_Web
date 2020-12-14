@@ -36,7 +36,15 @@
                     <a class="navbar-brand">
                         CAPRES
                     </a>
-
+                    <ul class="navbar-nav mr-auto">
+                        @auth
+                        @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+                            <li class="nav-item">
+                                <a class="nav-link" href="{}">User</a>
+                            </li>
+                        @endif
+                        @endauth
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

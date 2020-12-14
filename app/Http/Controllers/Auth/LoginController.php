@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -35,6 +38,57 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+        $admin = [
+            'username' => $request->username,
+            'password' => $request->password,
+            'role_id' => 1,
+            'is_login' => '0',
+        ];
+
+        $user = [
+            'username' => $request->username,
+            'password' => $request->password,
+            'role_id' => 2,
+            'is_login' => '0',
+        ];
+
+        if (Auth::attempt($admin)){
+
+            $this->isLogin(Auth::id());
+            return redirect()->route('event.index');//event.index
+        } elseif (Auth::attempt($user)){
+
+            $this->isLogin(Auth::id());
+            return redirect()->route('event.index');//event.index
+        }
+
+        return redirect()->route('login');
+
+    }
+    public function logout(Request $request)
+    {
+        $user = User::findOrFail(Auth::id());
+        $user -> update([
+            'is_login'=> '0',
+        ]);
+
+        Auth::logout();
+        $request->session()->invalidate();
+        return redirect()->route('login');
+    }
+
+    private function isLogin(?int $id)
+    {
+        $user = User::findOrFail($id);
+        return $user -> update([
+            'is_login'=> '1',
+
+        ]);
     }
 }

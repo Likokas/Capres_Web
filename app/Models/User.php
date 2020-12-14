@@ -24,6 +24,7 @@ class User extends Authenticatable
         'mahasiswa_id',
         'dosen_id',
         'role_id',
+        'is_login',
     ];
 
     /**
@@ -75,5 +76,19 @@ class User extends Authenticatable
 
     public function pesan_user(){
         return $this->belongsToMany(Event::class)->withPivot('pesan')->withTimestamps();
+    }
+
+    public function isAdmin(){
+        if ($this->role->nama=='Admin'&&$this->is_login=='1'){
+            return true;
+        }
+        return false;
+    }
+
+    public function isUser(){
+        if ($this->role->nama=='User'&&$this->is_login=='1'){
+            return true;
+        }
+        return false;
     }
 }
