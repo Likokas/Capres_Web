@@ -61,7 +61,7 @@ class LoginController extends Controller
         if (Auth::attempt($admin)){
 
             $this->isLogin(Auth::id());
-            return redirect()->route('event.index');//event.index
+            return redirect()->route('admin.index');//event.index
         } elseif (Auth::attempt($user)){
 
             $this->isLogin(Auth::id());
