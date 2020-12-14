@@ -20,9 +20,7 @@ Route::get('/', function () {
 Route::get('/index', function (){
     return redirect()->route('event.index');
 });
-Route::resource('event', \App\Http\Controllers\EventController::class);
 
-Route::resource('admin', \App\Http\Controllers\Admin\EventController::class);
 
 //Route::get('/index', function () {
 //    return view('User.Event.index');
@@ -46,4 +44,11 @@ Route::get('/index', function (){
     return redirect()->route('event.index');
 });
 
+Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::resource('event', \App\Http\Controllers\Admin\EventController::class);
+});
+
+Route::group(['middleware' => 'user', 'prefix' => 'user', 'as' => 'user.'], function () {
+    Route::resource('event', \App\Http\Controllers\EventController::class);
+});
 

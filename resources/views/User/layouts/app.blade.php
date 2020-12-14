@@ -57,7 +57,7 @@
                         <a class="nav-link" href="/addData">Add Data</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('event.create')}}">Add Event</a>
+                        <a class="nav-link" href="{{route('user.event.create')}}">Add Event</a>
                     </li>
 
 {{--                    <li class="nav-item">--}}

@@ -2,7 +2,7 @@
 @section('content')
     <section class="clean-block clean-form dark">
         <div class="container">
-            <form action="{{ route('event.store') }}" method="post">
+            <form action="{{ route('user.event.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama Event:</label>
