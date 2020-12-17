@@ -22,40 +22,40 @@ class LoginController extends Controller
     public function login(Request $request)
     {
 
-        $http = new \GuzzleHttp\Client();
+        $http = new \GuzzleHttp\Client;
 
         $user = [
-            'username' => $request->username,
-            'password' => $request->password,
+            'email'=>$request -> email,
+            'password'=>$request-> password,
             'role_id' => 2,
             'is_login' => '0',
         ];
 
-        $check = DB::table('users')->where('username', $request->username)->first();
-
-        if ($check->is_login == '0') {
-            if (Auth::attempt($user)) {
-                $this->isLogin(Auth::id());
-                $response = $http->post('http://catatanprestasi.test/oauth/token', [
-                    'form_params' => [
+        $check = DB::table('users')->where('email',$request->email)-> first();
+        if ($check->is_login=='0'){
+            if (Auth::attempt($user)){
+                $response = $http->post('http://catatanprestasi.test/oauth/token',[
+                    'form_params'=>[
                         'grant_type' => 'password',
                         'client_id' => $this->client->id,
-                        'client_secret' => $this->client->secret,
-                        'username' => $request->username,
-                        'password' => $request->password,
-                        'scope' => '*',
+                        'client_secret'=>$this->client->secret,
+                        'username'=>$request->email,
+                        'password'=>$request->password,
+                        'scope'=>'*',
                     ]
                 ]);
-                return json_decode((string)$response->getBody(), true);
-            } else {
+                $this->isLogin(Auth::id());
+                return json_decode((string)$response->getBody(),true);
+            }
+            else {
                 return response([
-                    'message' => 'Login failed'
+                    'message' => 'Login Failed'
                 ]);
             }
         }
     }
 
-    private function isLogin(?int $id)
+    private function isLogin(int $id)
     {
         $user = User::findOrFail($id);
         return $user->update([
@@ -63,4 +63,17 @@ class LoginController extends Controller
 
         ]);
     }
+
+//    public function logout() {
+//        $user = Auth::user();
+//        $user->update([
+//            'is_login' => '0',
+//
+//        ]);
+//
+//
+//        return response([
+//            'message' => 'Logged Out'
+//        ]);
+//    }
 }

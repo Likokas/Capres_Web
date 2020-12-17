@@ -45,14 +45,14 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $admin = [
-            'username' => $request->username,
+            'email' => $request->email,
             'password' => $request->password,
             'role_id' => 1,
             'is_login' => '0',
         ];
 
         $user = [
-            'username' => $request->username,
+            'email' => $request->email,
             'password' => $request->password,
             'role_id' => 2,
             'is_login' => '0',
