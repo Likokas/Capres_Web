@@ -15,8 +15,15 @@ class EventResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'nama_event' => $this->nama_event,
-            'keterangan_event' => $this->keterangan_event,
+            'event_id' => $this->event_id,
+            'user_id' => $this->user_id,
+            'prestasi' => $this->prestasi,
+            'bukti' => $this->bukti,
+            'pembimbing_id' => $this->pembimbing_id,
+            'point_id' => $this->point_id,
+            'tanggal_input' => $this->tanggal_input,
+            'pesan' => $this->pesan,
+//            'is_approved'
         ];
     }
 }

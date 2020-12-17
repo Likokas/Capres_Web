@@ -17,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('api-register',[\App\Http\Controllers\Api\Auth\RegisterController::class,'register']);
 Route::post('api-login',[LoginController::class,'login']);
+Route::post('refresh',[LoginController::class,'refresh']);
 
-Route::group(['middleware' => 'auth-api'], function(){
+Route::group(['middleware' => 'auth:api'], function(){
     Route::apiResource('events', \App\Http\Controllers\Api\EventController::class);
-//    Route::post('logout', [LoginController::class, 'logout']);
+    Route::post('logout', [LoginController::class, 'logout']);
 });
 
 
