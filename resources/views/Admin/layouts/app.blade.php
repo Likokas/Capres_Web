@@ -47,21 +47,11 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin">List Prestasi</a>
+                        <a class="nav-link" href="{{route('admin.pembimbing.index')}}">List Prestasi</a>
                     </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="/addData">Add Data</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="/addEvent" data-toggle="modal"--}}
-{{--                           data-target="#addEvent"><i class="fas fa-plus-circle">Add Event</a>--}}
-{{--                        @include('User.Event.addEvent')--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="/addPembimbing" data-toggle="modal"--}}
-{{--                           data-target="#addPembimbing"><i class="fas fa-plus-circle">Add Pembimbing</a>--}}
-{{--                        @include('User.Event.addPembimbing')--}}
-{{--                    </li>--}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.pembimbing.create')}}">Add Pembimbing</a>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

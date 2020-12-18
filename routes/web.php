@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/login', function () {
     return view('auth.login');
 });
 
@@ -40,12 +44,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/index', function (){
-    return redirect()->route('event.index');
-});
 
 Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('event', \App\Http\Controllers\Admin\EventController::class);
+    Route::resource('pembimbing',\App\Http\Controllers\DosenController::class);
 });
 
 Route::group(['middleware' => 'user', 'prefix' => 'user', 'as' => 'user.'], function () {

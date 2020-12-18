@@ -19,8 +19,8 @@ class CreateEventUserTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->text('prestasi');
             $table->text('bukti');
-            $table->unsignedBigInteger('pembimbing_id');
-            $table->foreign('pembimbing_id')->references('id')->on('pembimbings');
+            $table->unsignedBigInteger('dosen_id');
+            $table->foreign('dosen_id')->references('id')->on('dosens');
             $table->unsignedBigInteger('point_id');
             $table->foreign('point_id')->references('id')->on('points');
             $table->date('tanggal_input');

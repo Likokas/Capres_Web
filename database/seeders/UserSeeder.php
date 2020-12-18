@@ -28,6 +28,9 @@ class UserSeeder extends Seeder
         $user->password=Hash::make('12345678');
         $user->role_id= '2';//user
         $user->save();
+
+
+
         //
     }
 }

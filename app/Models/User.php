@@ -63,8 +63,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Event::class)->withPivot('is_approved')->withTimestamps();
     }
 
-    public function pembimbing_user(){
-        return $this->belongsToMany(Event::class)->withPivot('pembimbing_id')->withTimestamps();
+    public function dosen_user(){
+        return $this->belongsToMany(Event::class)->withPivot('dosen_id')->withTimestamps();
     }
 
     public function point_user(){

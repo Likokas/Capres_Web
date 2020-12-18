@@ -51,24 +51,13 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index">List Prestasi</a>
+                        <a class="nav-link" href="{{route('user.event.index')}}">List Prestasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/addData">Add Data</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('user.event.create')}}">Add Event</a>
-                    </li>
-
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="{{route('event.create')}}" data-toggle="modal"--}}
-{{--                           data-target="#addEvent">Add Event</a>--}}
-{{--                            @include('User.Event.addEvent')--}}
-{{--                    </li>--}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/addPembimbing" data-toggle="modal"
-                           data-target="#addPembimbing">Add Pembimbing</a>
-                        @include('User.Event.addPembimbing')
                     </li>
                 </ul>
 

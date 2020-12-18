@@ -10,8 +10,7 @@ class jabatan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'inisial',
-        'prodi',
+        'jabatan',
     ];
 
     public function dosenj(){

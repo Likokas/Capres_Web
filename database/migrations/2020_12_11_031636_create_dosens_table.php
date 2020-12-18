@@ -18,6 +18,8 @@ class CreateDosensTable extends Migration
             $table->string('nip');
             $table->string('nidn');
             $table->string('nama');
+            $table->string('phone');
+            $table->string('line_account')->nullable();
             $table->string('email');
             $table->text('keterangan');
             $table->text('passfoto');

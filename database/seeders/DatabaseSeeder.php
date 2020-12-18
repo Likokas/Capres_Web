@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
         $this->call([
-           UserSeeder::class, JenisSeeder::class, NegaraSeeder::class, TingkatanSeeder::class
+           RoleSeeder::class,UserSeeder::class, JenisSeeder::class, NegaraSeeder::class, TingkatanSeeder::class,JabatanSeeder::class,JakaSeeder::class,ProdiSeeder::class
         ]);
         Model::reguard();
         // \App\Models\User::factory(10)->create();
