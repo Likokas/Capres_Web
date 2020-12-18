@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\dosen;
+use App\Models\jabatan;
+use App\Models\jaka;
+use App\Models\prodi;
 use Illuminate\Http\Request;
 
 class DosenController extends Controller
@@ -25,7 +28,16 @@ class DosenController extends Controller
      */
     public function create()
     {
-        return view('admin.event.addDosen');
+        //Prodi
+        $prodis = prodi::all();
+
+        //jabatan
+        $jabatans = jabatan::all();
+
+        //jaka
+        $jakas = jaka::all();
+
+        return view('admin.event.addDosen', compact('prodis', 'jabatans', 'jakas'));
     }
 
     /**
@@ -36,7 +48,18 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dosen::create($request->all());
+        //Prodi
+        $prodis = prodi::all();
+
+        //jabatan
+        $jabatans = jabatan::all();
+
+        //jaka
+        $jakas = jaka::all();
+
+        return view('admin.event.addDosen', compact('prodis', 'jabatans', 'jakas'));
+
     }
 
     /**

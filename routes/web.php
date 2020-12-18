@@ -21,25 +21,14 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/index', function (){
-    return redirect()->route('event.index');
+Route::get('/', function (){
+    return redirect()->route('login');
 });
 
-
-//Route::get('/index', function () {
-//    return view('User.Event.index');
-//});
 
 Route::get('/addData', function () {
     return view('User.Event.adddata');
 });
-
-//Route::get('/admin', function () {
-//    return view('Admin.Event.index');
-//});
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

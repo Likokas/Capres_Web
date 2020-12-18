@@ -2,7 +2,7 @@
 @section('content')
     <section class="clean-block clean-form dark">
         <div class="container">
-            <form action="" method="post">
+            <form action="{{ route('admin.pembimbing.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="nama">NIP:</label>
@@ -37,31 +37,27 @@
                     <input type="text" class="form-control" name="passfoto">
                 </div>
                 <div class="form-group">
-                    <label for="nama">Penyelenggara:</label>
-                    <input type="text" class="form-control"  name="penyelenggara">
-                </div>
-                <div class="form-group">
                     <label for="nama">Prodi:</label>
                     <select name="prodi_id" class="custom-select">
-{{--                        @foreach($negaras as $negara)--}}
-{{--                            <option value="{{$negara->id}}">{{$negara->negara}}</option>--}}
-{{--                        @endforeach--}}
+                        @foreach($prodis as $prodi)
+                            <option value="{{$prodi->id}}">{{$prodi->inisial.'('.$prodi->prodi.')'}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="nama">Jabatan:</label>
                     <select name="jabatan_id" class="custom-select">
-{{--                        @foreach($negaras as $negara)--}}
-{{--                            <option value="{{$negara->id}}">{{$negara->negara}}</option>--}}
-{{--                        @endforeach--}}
+                        @foreach($jabatans as $jabatan)
+                            <option value="{{$jabatan->id}}">{{$jabatan->jabatan}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="nama">Jaka:</label>
                     <select name="jaka_id" class="custom-select">
-{{--                        @foreach($negaras as $negara)--}}
-{{--                            <option value="{{$negara->id}}">{{$negara->negara}}</option>--}}
-{{--                        @endforeach--}}
+                        @foreach($jakas as $jaka)
+                            <option value="{{$jaka->id}}">{{$jaka->jaka}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <br>
