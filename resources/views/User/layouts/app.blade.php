@@ -51,7 +51,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index">List Prestasi</a>
+                        <a class="nav-link" href="{{route('user.event.index')}}">List Prestasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/addData">Add Data</a>

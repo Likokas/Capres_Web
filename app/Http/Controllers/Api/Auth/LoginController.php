@@ -20,6 +20,7 @@ class LoginController extends Controller
         $this->client = Client::find(2);
     }
 
+    //login user
     public function login(Request $request)
     {
 
@@ -29,6 +30,43 @@ class LoginController extends Controller
             'email'=>$request -> email,
             'password'=>$request-> password,
             'role_id' => 2,
+            'is_login' => '0',
+        ];
+
+        $check = DB::table('users')->where('email',$request->email)-> first();
+        if ($check->is_login=='0'){
+            if (Auth::attempt($user)){
+                $response = $http->post('http://catatanprestasi.test/oauth/token',[
+                    'form_params'=>[
+                        'grant_type' => 'password',
+                        'client_id' => $this->client->id,
+                        'client_secret'=>$this->client->secret,
+                        'username'=>$request->email,
+                        'password'=>$request->password,
+                        'scope'=>'*',
+                    ]
+                ]);
+                $this->isLogin(Auth::id());
+                return json_decode((string)$response->getBody(),true);
+            }
+            else {
+                return response([
+                    'message' => 'Login Failed'
+                ]);
+            }
+        }
+    }
+
+    //login admin
+    public function loginAdmin(Request $request)
+    {
+
+        $http = new \GuzzleHttp\Client;
+
+        $user = [
+            'email'=>$request -> email,
+            'password'=>$request-> password,
+            'role_id' => 1,
             'is_login' => '0',
         ];
 
