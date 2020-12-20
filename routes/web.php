@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-//Route::get('/index', function (){
-//    return redirect()->route('event.index');
-//});
+Route::get('/index', function (){
+    return redirect()->route('event.index');
+});
 
 
 //Route::get('/index', function () {

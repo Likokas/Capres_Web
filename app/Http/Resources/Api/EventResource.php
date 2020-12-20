@@ -19,7 +19,7 @@ class EventResource extends JsonResource
             'user_id' => $this->user_id,
             'prestasi' => $this->prestasi,
             'bukti' => $this->bukti,
-            'pembimbing_id' => $this->pembimbing_id,
+            'dosen_id' => $this->dosen_id,
             'point_id' => $this->point_id,
             'tanggal_input' => $this->tanggal_input,
             'pesan' => $this->pesan,

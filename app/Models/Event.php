@@ -38,8 +38,8 @@ class Event extends Model
         return $this->belongsToMany(User::class)->withPivot('is_approved')->withTimestamps();
     }
 
-    public function pembimbing_event(){
-        return $this->belongsToMany(User::class)->withPivot('pembimbing_id')->withTimestamps();
+    public function dosen_event(){
+        return $this->belongsToMany(User::class)->withPivot('dosen_id')->withTimestamps();
     }
 
     public function point_event(){

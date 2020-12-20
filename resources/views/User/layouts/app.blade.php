@@ -59,17 +59,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('user.event.create')}}">Add Event</a>
                     </li>
-
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="{{route('event.create')}}" data-toggle="modal"--}}
-{{--                           data-target="#addEvent">Add Event</a>--}}
-{{--                            @include('User.Event.addEvent')--}}
-{{--                    </li>--}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/addPembimbing" data-toggle="modal"
-                           data-target="#addPembimbing">Add Pembimbing</a>
-                        @include('User.Event.addPembimbing')
-                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
