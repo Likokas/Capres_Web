@@ -17,24 +17,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/index', function (){
-    return redirect()->route('event.index');
-});
-
-
-//Route::get('/index', function () {
-//    return view('User.Event.index');
-//});
-
 Route::get('/addData', function () {
     return view('User.Event.adddata');
 });
-
-//Route::get('/admin', function () {
-//    return view('Admin.Event.index');
-//});
-
-
 
 Auth::routes();
 
@@ -46,6 +31,7 @@ Route::get('/index', function (){
 
 Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('event', \App\Http\Controllers\Admin\EventController::class);
+    Route::resource('pembimbing',\App\Http\Controllers\DosenController::class);
 });
 
 Route::group(['middleware' => 'user', 'prefix' => 'user', 'as' => 'user.'], function () {
