@@ -54,7 +54,7 @@
                         <a class="nav-link" href="{{route('user.event.index')}}">List Prestasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/addData">Add Data</a>
+                        <a class="nav-link" href="{{route('user.data.create')}}">Add Data</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('user.event.create')}}">Add Event</a>

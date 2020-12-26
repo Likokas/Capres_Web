@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/addData', function () {
-    return view('User.Event.adddata');
-});
+//Route::get('/addData', function () {
+//    return view('User.Event.adddata');
+//});
 
 Auth::routes();
 
@@ -36,5 +36,6 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
 
 Route::group(['middleware' => 'user', 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::resource('event', \App\Http\Controllers\EventController::class);
+    Route::resource('data', \App\Http\Controllers\EventUserController::class);
 });
 

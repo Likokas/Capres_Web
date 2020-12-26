@@ -24,7 +24,7 @@ class CreateEventUserTable extends Migration
             $table->unsignedBigInteger('point_id');
             $table->foreign('point_id')->references('id')->on('points');
             $table->date('tanggal_input');
-            $table->text('pesan');
+            $table->text('pesan')->nullable();
             $table->enum('is_approved',['0','1','2'])
                 ->default('0')
                 ->comment('0 = pending, 1 = approved, 2 = decline');

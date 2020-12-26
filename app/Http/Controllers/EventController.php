@@ -18,10 +18,9 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::all();
-        return view('user.event.index',compact('events'));
+//        $events = Event::all();
+        return view('user.event.index');
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -48,6 +47,7 @@ class EventController extends Controller
         $jenisk = jenis::all();
         $tingkatans = tingkatan::all();
         $negaras = negara::all();
+
         return view('user.event.addEvent', compact('jenisk', 'tingkatans', 'negaras'));
     }
 
@@ -59,6 +59,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
+
         //
     }
 
