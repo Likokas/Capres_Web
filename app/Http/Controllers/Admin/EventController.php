@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\EventUser;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -15,7 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = EventUser::all();
         return view('admin.event.index',compact('events'));
     }
 
@@ -37,6 +38,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+
         //
     }
 
@@ -48,6 +50,8 @@ class EventController extends Controller
      */
     public function show($id)
     {
+//        $ev = EventUser::all();
+//        return view('admin.event.detail',compact('ev'));
         //
     }
 

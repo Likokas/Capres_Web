@@ -24,22 +24,21 @@
                         </tr>
                         </thead>
                         <tbody>
-{{--                            @foreach($events as $event)--}}
-{{--                                <tr>--}}
-{{--                                    <td>{{$event->namaEvent->nama_event}}</td>--}}
-{{--                                    <td>{{$event->keterangan_event}}</td>--}}
-{{--                                    <td>{{$event->prestasi}}</td>--}}
-{{--                                    <td>{{$event->tanggal_pelaksanaan}}</td>--}}
-{{--                                    <td>{{$event->penyelenggara}}</td>--}}
-{{--                                    <td>{{$event->pembimbing->pembimbing}}</td>--}}
-{{--                                    <td>{{$event->jenis->jenis}}</td>--}}
-{{--                                    <td>{{$event->tingkatan->tingkatan}}</td>--}}
-{{--                                    <td>{{$event->point->point}}</td>--}}
-{{--                                    <td>{{$event->negara->negara}}</td>--}}
-{{--                                    <td>{{$event->bukti}}</td>--}}
-{{--                                    <td>-</td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
+                            @foreach($eu as $evu)
+                                <tr>
+                                    <td>{{$evu->event->nama_event}}</td>
+
+                                    <td>{{$evu->prestasi}}</td>
+
+                                    <td>{{$evu->dosen->nama}}</td>
+                                    <td>{{$evu->bukti}}</td>
+                                    <td>{{$evu->point->keterangan}}</td>
+
+
+
+                                    <td>-</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

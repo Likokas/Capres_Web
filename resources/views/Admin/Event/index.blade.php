@@ -25,18 +25,20 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($events as $event)
                         <tr>
-                            <td>KCS</td>
-                            <td>NPLCa</td>
-                            <td>Juara 1 Lomba Kategori 1</td>
+                            <td>{{$event->user->name}}</td>
+                            <td>{{$event->event->nama_event}}</td>
+                            <td>{{$event->point->keterangan}}</td>
                             <td>
                                 <button class="btn btn-primary" data-toggle="modal"
                                         data-target="#detail"><i class="fas fa-plus-circle" type="submit" >Detail</i></button>
                                 @include('Admin.Event.detail')
                             </td>
-                            <td>Universitas Ciputra</td>
+                            <td>-</td>
                             <td>-</td>
                         </tr>
+                        @endforeach
 {{--                        @foreach($event->guests as $guest)--}}
 {{--                            <tr class="text-center">--}}
 {{--                                <td>{{$guest->id}}</td>--}}

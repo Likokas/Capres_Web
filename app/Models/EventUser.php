@@ -12,7 +12,7 @@ class EventUser extends Pivot
     protected $table = 'event_user';
 
     public function point(){
-        return $this->belongsTo(Event::class, 'point_id', 'id');
+        return $this->belongsTo(point::class, 'point_id', 'id');
     }
 
     public function dosen(){

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventUser;
 use App\Models\jenis;
 use App\Models\negara;
+use App\Models\point;
 use App\Models\tingkatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -18,8 +21,10 @@ class EventController extends Controller
     public function index()
     {
         //
+        $eu = EventUser::where('user_id',Auth::id())->get();
+        return view('user.event.index', compact('eu'));
 //        $events = Event::all();
-        return view('user.event.index');
+//        return view('user.event.index');
     }
     /**
      * Show the form for creating a new resource.
