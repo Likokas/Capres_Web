@@ -33,10 +33,10 @@
                                     <td>{{$evu->dosen->nama}}</td>
                                     <td>{{$evu->bukti}}</td>
                                     <td>{{$evu->point->keterangan}}</td>
-
-
-
-                                    <td>-</td>
+                                    <td>@if($evu->is_approved == 0) <p class="text-warning">Pending</p>
+                                        @elseif($evu->is_approved == 1) <p class="text-success">Approved</p>
+                                        @else <p class="text-danger">Rejected</p> @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
