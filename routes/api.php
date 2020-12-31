@@ -23,8 +23,8 @@ Route::post('api-loginadmin',[LoginController::class,'loginAdmin']);
 Route::post('refresh',[LoginController::class,'refresh']);
 
 Route::group(['middleware' => 'auth:api'], function(){
-    Route::apiResource('events', \App\Http\Controllers\Api\EventController::class);
+    Route::apiResource('events', \App\Http\Controllers\Api\EventController::class);//Admin
+    Route::apiResource('eventsU', \App\Http\Controllers\Api\EventUController::class);//User
     Route::post('logout', [LoginController::class, 'logout']);
 });
-
 
