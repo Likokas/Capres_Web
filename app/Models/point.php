@@ -15,7 +15,7 @@ class point extends Model
 
     ];
 
-//    public function events(){
-//        return $this->hasMany(Event::class, 'point_id', 'id');
-//    }
+    public function events(){
+        return $this->hasMany(EventUser::class, 'point_id', 'id');
+    }
 }

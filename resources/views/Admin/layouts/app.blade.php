@@ -48,7 +48,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.pembimbing.index')}}">List Prestasi</a>
+                        <a class="nav-link" href="{{route('admin.event.index')}}">List Prestasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.pembimbing.create')}}">Add Pembimbing</a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\EventResource;
 use App\Models\Event;
+use App\Models\EventUser;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -16,7 +17,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = EventUser::all();
         return EventResource::collection($events);
         //
     }
