@@ -23,7 +23,7 @@ class EventResource extends JsonResource
             'point_id' => $this->point->point,
             'tanggal_input' => $this->tanggal_input,
             'pesan' => $this->pesan,
-//            'is_approved'
+            'is_approved' => $this->is_approved,
         ];
     }
 }
