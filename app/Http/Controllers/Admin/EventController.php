@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\EventUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -38,8 +39,10 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-
-        //
+        $user = User::findOrFail($request->user_id);
+        $attend = $user->attends_user()->syncWithoutDetaching($request->event_id, ['is_approved' => '0']);
+        return empty($attend) ? redirect()->back()->with('Fail', "Failed to add new guest")
+            : redirect()->back()->with('Success', 'Added');
     }
 
     /**
@@ -87,5 +90,25 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function approve($id, Request $request){
+        $event = EventUser::where('id', $request->event_id)->first();
+        $event->update([
+            'is_approved' => '1',
+        ]);
+
+        return empty($event) ? redirect()->back()->with('Fail', "Failed to update status")
+            : redirect()->back()->with('Success', 'Approved');
+    }
+
+    public function decline($id, Request $request){
+        $event = EventUser::where('id', $request->event_id)->first();
+        $event->update([
+            'is_approved' => '2',
+        ]);
+
+        return empty($event) ? redirect()->back()->with('Fail', "Failed to update status")
+            : redirect()->back()->with('Success', 'Approved');
     }
 }
