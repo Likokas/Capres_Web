@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,9 @@ Route::get('/index', function (){
 Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('event', \App\Http\Controllers\Admin\EventController::class);
     Route::resource('pembimbing',\App\Http\Controllers\DosenController::class);
+
+    Route::post('events/{id}/approve', [\App\Http\Controllers\Admin\EventController::class, 'approve'])->name('events.approve');
+    Route::post('events/{id}/decline', [EventController::class, 'decline'])->name('events.decline');
 });
 
 Route::group(['middleware' => 'user', 'prefix' => 'user', 'as' => 'user.'], function () {

@@ -42,14 +42,14 @@
                                 <div class="row no-gutters">
                                     @if($event->is_approved == 0)
                                         <div class="col-md-6">
-                                            <form action="" method="POST">
+                                            <form action="{{route('admin.events.approve', $event->id)}}" method="POST">
                                                   {{ csrf_field() }}
                                                   <input name="event_id" type="hidden" value="{{$event->id}}">
                                                   <button class="btn btn-success btn-circle" title="Approve" type="submit"><i class="fas fa-check"></i></button>
                                             </form>
                                         </div>
                                         <div class="col-md-6">
-                                            <form action="" method="POST">
+                                            <form action="{{route('admin.events.decline', $event->id)}}" method="POST">
                                                    {{ csrf_field() }}
                                                    <input name="event_id" type="hidden" value="{{$event->id}}">
                                                    <button class="btn btn-danger btn-circle" title="Reject" type="submit"><i class="fas fa-times"></i></button>
