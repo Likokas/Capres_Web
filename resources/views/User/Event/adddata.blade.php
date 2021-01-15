@@ -6,13 +6,13 @@
                 <h1 class="text-dark mx-auto">Add Data</h1>
                 <h4>Silahkan Menambah Data Prestasi Anda</h4>
             </div>
-            <form action="{{ route('user.data.store') }}" method="post">
+            <form action="{{ route('user.data.store') }}" method="post"> {{--menampilkan data -- /EventUserController--}}
                 @csrf
                 <div class="form-group">
                     <label>Nama Event</label>
                     <select name="event_id" class="custom-select">
-                        @foreach($datas as $data)
-                            <option value="{{$data->id}}">{{$data->nama_event}}</option>
+                        @foreach($datas as $data) {{--menampilkan data dropdown -- /EventUserController--}}
+                            <option value="{{$data->id}}">{{$data->nama_event.'  ('. $data->tanggal_pelaksanaan.')'}}</option>
                         @endforeach
                     </select>
                 </div>

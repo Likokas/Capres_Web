@@ -19,23 +19,23 @@
                             <th>Name</th>
                             <th>Nama Event</th>
                             <th>Prestasi</th>
-                            <th>Detail</th>
+{{--                            <th>Detail</th>--}}
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($events as $event)
+                        @foreach($events as $event) {{--menampilkan data -- Admin/EventController--}}
                         <tr>
-                            <td>{{$event->user->name}}</td>
+                            <td>{{$event->user->name}}</td> {{-- Function user Model/EventUser -> nama coloumn--}}
                             <td>{{$event->event->nama_event}}</td>
                             <td>{{$event->point->keterangan}}</td>
-                            <td>
-                                <button class="btn btn-primary" data-toggle="modal"
-                                        data-target="#detail"><i class="fas fa-circle" type="submit" > Detail</i></button>
-                                @include('Admin.Event.detail')
-                            </td>
-                            <td>@if($event->is_approved == 0) <p class="text-warning">Pending</p>
+{{--                            <td>--}}
+{{--                                <button class="btn btn-primary" data-toggle="modal"--}}
+{{--                                        data-target="#detail"><i class="fas fa-circle" type="submit" > Detail</i></button>--}}
+{{--                                @include('Admin.Event.detail')--}}
+{{--                            </td>--}}
+                            <td>@if($event->is_approved == 0) <p class="text-warning">Pending</p> {{--Function approve Admin/EventController--}}
                                 @elseif($event->is_approved == 1) <p class="text-success">Approved</p>
                                 @else <p class="text-danger">Rejected</p> @endif </td>
                             <td width="150px">

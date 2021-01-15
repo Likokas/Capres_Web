@@ -19,10 +19,7 @@ class EventUserController extends Controller
      */
     public function index()
     {
-        $eu = EventUser::where('user_id',Auth::id())->get();
-//        dd($eu);
-        return view('user.event.index', compact('eu'));
-        //
+
     }
 
     /**

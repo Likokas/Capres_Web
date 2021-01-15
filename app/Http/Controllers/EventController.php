@@ -23,8 +23,7 @@ class EventController extends Controller
         //
         $eu = EventUser::where('user_id',Auth::id())->get();
         return view('user.event.index', compact('eu'));
-//        $events = Event::all();
-//        return view('user.event.index');
+
     }
     /**
      * Show the form for creating a new resource.

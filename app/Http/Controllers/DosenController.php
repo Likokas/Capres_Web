@@ -17,8 +17,7 @@ class DosenController extends Controller
      */
     public function index()
     {
-        $dosens = dosen::all();
-        return view('admin.event.index', compact('dosens'));
+
     }
 
     /**

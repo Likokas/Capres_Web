@@ -39,10 +39,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::findOrFail($request->user_id);
-        $attend = $user->attends_user()->syncWithoutDetaching($request->event_id, ['is_approved' => '0']);
-        return empty($attend) ? redirect()->back()->with('Fail', "Failed to add new guest")
-            : redirect()->back()->with('Success', 'Added');
+
     }
 
     /**
@@ -100,6 +97,8 @@ class EventController extends Controller
 
         return empty($event) ? redirect()->back()->with('Fail', "Failed to update status")
             : redirect()->back()->with('Success', 'Approved');
+
+        //dari table Model/EventUser -> ngambil id EventUser -> dalam id ada is_approve(pending) = 0 diganti = 1
     }
 
     public function decline($id, Request $request){
@@ -110,5 +109,7 @@ class EventController extends Controller
 
         return empty($event) ? redirect()->back()->with('Fail', "Failed to update status")
             : redirect()->back()->with('Success', 'Approved');
+
+        //dari table Model/EventUser -> ngambil id EventUser -> dalam id ada is_approve(pending) = 0 diganti = 2
     }
 }

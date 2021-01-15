@@ -2,7 +2,7 @@
 @section('content')
     <section class="clean-block clean-form dark">
         <div class="container">
-            <form action="{{ route('admin.pembimbing.store') }}" method="post">
+            <form action="{{ route('admin.pembimbing.store') }}" method="post"> {{--add data dosen -- DosenController--}}
                 @csrf
                 <div class="form-group">
                     <label for="nama">NIP:</label>

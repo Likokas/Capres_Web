@@ -36,7 +36,7 @@ class LoginController extends Controller
         $check = DB::table('users')->where('email',$request->email)-> first();
         if ($check->is_login=='0'){
             if (Auth::attempt($user)){
-                $response = $http->post('http://catatanprestasi.test/oauth/token',[
+                $response = $http->post('http://192.168.100.106/Capres/public/oauth/token',[
                     'form_params'=>[
                         'grant_type' => 'password',
                         'client_id' => $this->client->id,

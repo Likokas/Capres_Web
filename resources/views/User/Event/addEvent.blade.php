@@ -2,7 +2,7 @@
 @section('content')
     <section class="clean-block clean-form dark">
         <div class="container">
-            <form action="{{ route('user.event.store') }}" method="post">
+            <form action="{{ route('user.event.store') }}" method="post">{{--menampilkan data -- /EventController--}}
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama Event:</label>
@@ -18,8 +18,8 @@
                 </div>
                 <div class="form-group">
                     <label for="nama">Jenis:</label>
-                    <select name="jenis_id" class="custom-select">
-                        @foreach($jenisk as $jenis)
+                    <select name="jenis_id" class="custom-select">{{--menampilkan data dropdown -- /EventController--}}
+                        @foreach($jenisk as $jenis){{--EventController--}}
                             <option value="{{$jenis->id}}">{{$jenis->jenis}}</option>
                         @endforeach
                     </select>

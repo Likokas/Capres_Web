@@ -24,9 +24,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($eu as $evu)
+                            @foreach($eu as $evu) {{--menampilkan data -- /EventController--}}
                                 <tr>
-                                    <td>{{$evu->event->nama_event}}</td>
+                                    <td>{{$evu->event->nama_event}}</td> {{-- Function user Model/EventUser -> nama coloumn--}}
 
                                     <td>{{$evu->prestasi}}</td>
 
