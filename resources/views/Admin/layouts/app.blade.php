@@ -53,6 +53,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.pembimbing.create')}}">Add Pembimbing</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.')}}">Help</a>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

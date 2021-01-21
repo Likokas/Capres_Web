@@ -34,6 +34,8 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
     Route::resource('event', \App\Http\Controllers\Admin\EventController::class);
     Route::resource('pembimbing',\App\Http\Controllers\DosenController::class);
 
+    Route::view('/help', 'admin.event.help');
+
     Route::post('events/{id}/approve', [\App\Http\Controllers\Admin\EventController::class, 'approve'])->name('events.approve');
     Route::post('events/{id}/decline', [EventController::class, 'decline'])->name('events.decline');
 });
@@ -41,5 +43,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
 Route::group(['middleware' => 'user', 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::resource('event', \App\Http\Controllers\EventController::class);
     Route::resource('data', \App\Http\Controllers\EventUserController::class);
+
+    Route::view('/help', 'user.event.help');
 });
 

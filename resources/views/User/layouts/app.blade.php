@@ -60,6 +60,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('user.event.create')}}">Add Event</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('user.')}}">Help</a>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
