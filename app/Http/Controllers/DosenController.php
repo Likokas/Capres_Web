@@ -17,7 +17,8 @@ class DosenController extends Controller
      */
     public function index()
     {
-
+        $dosens = dosen::all();
+        return view('Admin.event.listDosen',compact('dosens'));
     }
 
     /**
@@ -104,5 +105,7 @@ class DosenController extends Controller
     public function destroy(dosen $dosen)
     {
         //
+        $dosen->delete();
+        return redirect()->route('admin.pembimbing.index');
     }
 }

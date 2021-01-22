@@ -12,45 +12,40 @@
 
             <div class="modal-body" style="text-align: left;">
                 <div class="form-group">
-                    <label>Nama Event</label>
-                    <input class="form-control" type="text" disabled>
+                    <label>Nama</label>
+                    <input class="form-control" type="text" disabled value="{{ $event->user->name }}" >
                 </div>
                 <div class="form-group">
-                    <label>Keterangan Event</label>
-                    <input class="form-control" type="text" disabled>
+                    <label>Nama Event</label>
+                    <input class="form-control" type="text" disabled value="{{ $event->event->nama_event }}" >
                 </div>
+
+                <div class="form-group">
+                    <label>Keterangan Point</label>
+                    <input class="form-control" type="text" disabled value="{{ $event->point->keterangan }}">
+                </div>
+                <div class="form-group">
+                    <label>Point</label>
+                    <input class="form-control" type="text" disabled value="{{ $event->point->point }}">
+                </div>
+
                 <div class="form-group">
                     <label>Prestasi</label>
-                    <input class="form-control" type="text" disabled>
+                    <input class="form-control" type="text" disabled value="{{ $event->prestasi }}">
                 </div>
                 <div class="form-group">
                     <label>Bukti</label>
-                    <input class="form-control" type="text" disabled>
+                    <input class="form-control" type="text" disabled value="{{ $event->bukti }}">
                 </div>
                 <div class="form-group">
-                    <label>Tanggal Pelaksanaan</label>
-                    <input class="form-control" type="text" disabled>
-                </div>
-                <div class="form-group">
-                    <label>Negara</label>
-                    <input class="form-control" type="text" disabled>
+                    <label>Tanggal Input</label>
+                    <input class="form-control" type="text" disabled value="{{ $event->tanggal_input }}">
                 </div>
                 <div class="form-group">
                     <label>Pembimbing</label>
-                    <input class="form-control" type="text" disabled>
+                    <input class="form-control" type="text" disabled value="{{ $event->dosen->nama }}">
                 </div>
-                <div class="form-group">
-                    <label>Tingkatan </label>
-                    <input class="form-control" type="text" disabled>
-                </div>
-                <div class="form-group">
-                    <label>Penyelenggara</label>
-                    <input class="form-control" type="text" disabled>
-                </div>
-                <div class="form-group">
-                    <label>Jenis Event&nbsp;</label>
-                    <input class="form-control" type="text" disabled>
-                </div>
+
             </div>
         </form>
                 <!-- Modal footer -->
