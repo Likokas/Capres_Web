@@ -32,7 +32,7 @@
                             <td>{{$event->point->keterangan}}</td>
                             <td>
                                 <button class="btn btn-primary" data-toggle="modal"
-                                        data-target="#detail"><i class="fas fa-circle" type="submit" > Detail</i></button>
+                                        data-target="#detail{{$event->id}}"><i class="fas fa-circle" type="submit" > Detail</i></button>
                                 @include('Admin.Event.detail')
                             </td>
                             <td>@if($event->is_approved == 0) <p class="text-warning">Pending</p> {{--Function approve Admin/EventController--}}

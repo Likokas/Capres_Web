@@ -20,7 +20,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Detail</th>
-                            <th>Action</th>
+{{--                            <th>Action</th>--}}
                         </tr>
                         </thead>
                         <tbody>
@@ -32,17 +32,18 @@
 
                             <td>
                                 <button class="btn btn-primary" data-toggle="modal"
-                                    data-target="#detail"><i class="fas fa-circle" type="submit" > Detail</i>
+                                    data-target="#detail{{$dosen->id}}"><i class="fas fa-circle" type="submit" > Detail</i>
                                 </button>
                                     @include('Admin.Event.detailDosen')
                             </td>
-                            <td>
-                                <form action="{{ route('admin.pembimbing.destroy', $dosen) }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button class="btn btn-danger" type="submit">DELETE</button>
-                                </form>
-                            </td>
+{{--                            <td>--}}
+{{--                                <form action="{{ route('admin.pembimbing.destroy', $dosen) }}" method="POST">--}}
+{{--                                    --}}
+{{--                                    @csrf--}}
+{{--                                    <input type="hidden" name="_method" value="DELETE">--}}
+{{--                                    <button class="btn btn-danger" type="submit">DELETE</button>--}}
+{{--                                </form>--}}
+{{--                            </td>--}}
                         </tr>
                         @endforeach
                         </tbody>

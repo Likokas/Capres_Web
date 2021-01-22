@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal fade" id="detail">
+<div class="modal fade" id="detail{{$dosen->idw}}">
     <div class="modal-dialog">
         <form  class="modal-content">
 

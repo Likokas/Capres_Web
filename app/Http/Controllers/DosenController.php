@@ -104,8 +104,10 @@ class DosenController extends Controller
      */
     public function destroy(dosen $dosen)
     {
-        //
-        $dosen->delete();
-        return redirect()->route('admin.pembimbing.index');
+//        dd($dosen);
+//        //
+//        $dosen->delete();
+//
+//        return redirect()->route('admin.pembimbing.index');
     }
 }
