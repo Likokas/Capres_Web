@@ -54,13 +54,16 @@
                         <a class="nav-link" href="{{route('admin.pembimbing.index')}}">List Dosen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.pembimbing.create')}}">Add Pembimbing</a>
+                        <a class="nav-link" href="{{route('admin.pembimbing.create')}}">Add Dosen</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.mahasiswa.index')}}">List Mahasiswa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.mahasiswa.create')}}">Add Mahasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.account.create')}}">Add Akun Baru</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.')}}">Help</a>

@@ -34,6 +34,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], f
     Route::resource('event', \App\Http\Controllers\Admin\EventController::class);
     Route::resource('pembimbing',\App\Http\Controllers\DosenController::class);
     Route::resource('mahasiswa',\App\Http\Controllers\MahasiswaController::class);
+    Route::resource('account',\App\Http\Controllers\UserController::class);
 
     Route::view('/help', 'admin.event.help');
 
