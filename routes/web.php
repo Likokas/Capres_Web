@@ -33,6 +33,7 @@ Route::get('/index', function (){
 Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('event', \App\Http\Controllers\Admin\EventController::class);
     Route::resource('pembimbing',\App\Http\Controllers\DosenController::class);
+    Route::resource('mahasiswa',\App\Http\Controllers\MahasiswaController::class);
 
     Route::view('/help', 'admin.event.help');
 
