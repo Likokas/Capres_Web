@@ -70,6 +70,8 @@ class DosenController extends Controller
      */
     public function show(dosen $dosen)
     {
+//        $dosens = dosen::all();
+//        return view('admin.event.detailDosen',compact('dosens'));
         //
     }
 
